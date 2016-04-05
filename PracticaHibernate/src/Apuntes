@@ -1,0 +1,19 @@
+Crear automaticamente una tabla en sql al hacer una inserción:
+	En el archivo de configuración de hibernate se puede crear una tabla al realizar una inserción con la
+siguiente propiedad dentro del session factory:
+
+	<!-- Drop and re-create the database schema on startup-->
+	<property name="hbm2ddl.auto">create</property>
+
+	La nueva tabla se crea basandose en el mapeo del objeto insertado. Se toma el nombre de la clase como 
+nombre para la tabla y los nombres de los atributos como nombre para las columnas.
+
+	Esta expresión crea una nueva tabla cada vez que se realiza una nueva inserción a una tabla, es decir,
+que si llegase a existir la tabla donde se quiere realizar la inserción de una tupla, esta tabla será 
+dropeada y reemplazada por una nueva.
+
+	Para crear una tabla a la hora de realizar una inserción o para mantener los registros ingrasados ante-
+riormente sin dropear y crear una nueva tabla en cada inserción se puede utilizar, en cambio, la misma
+propiedad reemplazando "create" por "update":
+
+	<property name="hbm2ddl.auto">update</property>

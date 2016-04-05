@@ -3,7 +3,9 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <!-- Generated 02/04/2016 22:41:04 by Hibernate Tools 3.5.0.Final -->
+
 <hibernate-mapping>
+
     <class name="practica.dto.UserDetails" table="UserDetails">
         <id name="userId" type="java.lang.Integer">
             <column name="user_id" />
@@ -12,5 +14,15 @@
         <property name="userName" type="java.lang.String">
             <column name="user_name" />
         </property>
+        <property name="description" type="java.lang.String">
+        	<column name="description"/>
+        </property>
+        <property name="joinedDate" type="java.util.Date">
+        	<column name="joined_date"/>
+        </property>
+		<property name="address" type="java.lang.String">
+        	<column name="address"/>
+        </property>
     </class>
+    
 </hibernate-mapping>
